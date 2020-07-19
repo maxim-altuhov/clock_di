@@ -1,51 +1,32 @@
-import $ from 'jquery';
-window.jQuery = $;
-window.$ = $;
-// import 'nodelist-foreach-polyfill';
-// require('es6-promise').polyfill();
-// require('formdata-polyfill');
+document.addEventListener('DOMContentLoaded', function () {
 
-// import svgConvert from '../parts/svgConvert.js';
-// import webp from '../parts/webp.js';
-// import show from '../parts/show.js';
-// import galleryBox from '../parts/baguetteBox.js';
-// import popupInit from '../parts/popup.js';
-// import ibgremove from '../parts/ibg.js';
-// import custom from '../parts/custom.js';
-// import menu from '../parts/menu.js';
-// import forms from '../parts/forms.js';
-// import modal from '../parts/modal.js';
-// import validator from '../parts/validator.js';
-// import scroll from '../parts/scroll.js';
-// import inputJS from '../parts/input.js';
-// import aosinit from '../parts/aosinit.js';
-// import objectFit from '../parts/ofi.js';
-// import countAnimated from '../parts/count.js';
-// import sliderOwl from '../parts/owl-slider.js';
-// import sliderSlick from '../parts/slick-slider.js';
-// import fancyboxScript from '../parts/fancybox-script.js';
-// import '@fancyapps/fancybox';
-// import '../libs/retina.min.js';
+	function clock() {
+		var hours = document.querySelector('#hour');
+		var minutes = document.querySelector('#minutes');
+		var seconds = document.querySelector('#seconds');
 
-window.addEventListener('DOMContentLoaded', () => {
+		var hh = new Date().getHours();
+		var mm = new Date().getMinutes();
+		var ss = new Date().getSeconds();
 
-	// svgConvert();
-	// webp();
-	// show();
-	// galleryBox();
-	// popupInit();
-	// ibgremove();
-	// custom();
-	// menu();
-	// forms();
-	// modal();
-	// validator();
-	// scroll();
-	// inputJS();
-	// aosinit();
-	// objectFit();
-	// countAnimated();
-	// sliderOwl();
-	// sliderSlick();
-	// fancyboxScript();
+		if (hh < 10) {
+			hours.innerHTML = '0' + hh;
+		} else {
+			hours.innerHTML = hh;
+		}
+
+		if (mm < 10) {
+			minutes.innerHTML = '0' + mm;
+		} else {
+			minutes.innerHTML = mm;
+		}
+
+		if (ss < 10) {
+			seconds.innerHTML = '0' + ss;
+		} else {
+			seconds.innerHTML = ss;
+		}
+
+	}
+	var interval = setInterval(clock, 1000);
 });
