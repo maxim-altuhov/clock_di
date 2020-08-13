@@ -18,6 +18,7 @@ body {
           align-items: center;
   background-color: #202c52;
   min-height: 100vh;
+  height: 500px;
 }
 
 h2 {
